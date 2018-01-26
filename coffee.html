@@ -73,11 +73,18 @@
 
     coffeeImage.attr("src", "static/coffee_beans.jpg");
 
-    function makeCoffee(evt, drinkType) {
+    let drinksOrdered = [];
 
-        let drinksOrdered = []
-        drinksOrdered.push(drinkType)
-        console.log(drinksOrdered)
+    function makeCoffee(evt) {
+        // debugger;
+        let drinkType = evt.target.id;
+
+        if (drinkType === 'coffee-image') {
+            drinkType = 'brew';
+        }
+
+        drinksOrdered.push(drinkType);
+        console.log(drinksOrdered);
 
         coffeeImage.attr('src', 'static/coffee_machine.jpg');
 
@@ -88,10 +95,8 @@
             'static/coffee_beans.jpg'), 4000);
     }
 
-    coffeeImage.on('click', (evt)=>makeCoffee(evt, 'brew'));
-
-
-
+    $("button").on('click', makeCoffee);
+    coffeeImage.on('click', makeCoffee);
 
 
     // use this JavaScript object in further study step
