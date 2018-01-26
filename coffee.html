@@ -73,8 +73,11 @@
 
     coffeeImage.attr("src", "static/coffee_beans.jpg");
 
-    function makeCoffee(evt) {
-        console.log(evt);
+    function makeCoffee(evt, drinkType) {
+
+        let drinksOrdered = []
+        drinksOrdered.push(drinkType)
+        console.log(drinksOrdered)
 
         coffeeImage.attr('src', 'static/coffee_machine.jpg');
 
@@ -85,7 +88,7 @@
             'static/coffee_beans.jpg'), 4000);
     }
 
-    coffeeImage.on('click', makeCoffee);
+    coffeeImage.on('click', (evt)=>makeCoffee(evt, 'brew'));
 
 
 
