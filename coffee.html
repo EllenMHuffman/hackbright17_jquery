@@ -44,35 +44,48 @@
     </div>
 </div>
 
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
     "use strict";
     // Set these variables to their DOM elements
 
-    let coffeeImage = document.querySelector('#coffee-image');
-    let revenueMessage = document.querySelector('#revenue');
-    // let coffeeImage = $('#coffee-image'); JQUERY
-    // let revenueMessage = $('#revenue'); JQUERY
+    // let coffeeImage = document.querySelector('#coffee-image');
+    // let revenueMessage = document.querySelector('#revenue');
 
-    coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
-    // coffeeImage.attr("src", "static/coffee_beans.jpg");JQUERY
+    // coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+
+    // function makeCoffee(evt) {
+        // console.log(evt);
+
+        // coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+
+        // setTimeout(()=>coffeeImage.setAttribute('src',
+        //     'static/coffee_mug.jpg'), 1500);
+
+        // setTimeout(()=>coffeeImage.setAttribute('src',
+        //     'static/coffee_beans.jpg'), 2500);
+    // }
+
+    // coffeeImage.addEventListener('click', makeCoffee);
+
+    let coffeeImage = $('#coffee-image');
+    let revenueMessage = $('#revenue');
+
+    coffeeImage.attr("src", "static/coffee_beans.jpg");
 
     function makeCoffee(evt) {
         console.log(evt);
 
-        coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+        coffeeImage.attr('src', 'static/coffee_machine.jpg');
 
-        // console.log(coffeeImage);
-
-        setTimeout(()=>coffeeImage.setAttribute('src',
+        setTimeout(()=>coffeeImage.attr('src',
             'static/coffee_mug.jpg'), 1500);
 
-        setTimeout(()=>coffeeImage.setAttribute('src',
-            'static/coffee_beans.jpg'), 2500);
-
+        setTimeout(()=>coffeeImage.attr('src',
+            'static/coffee_beans.jpg'), 4000);
     }
 
-    coffeeImage.addEventListener('click', makeCoffee);
+    coffeeImage.on('click', makeCoffee);
 
 
 
