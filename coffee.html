@@ -47,7 +47,6 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
     "use strict";
-    // Set these variables to their DOM elements
 
     // let coffeeImage = document.querySelector('#coffee-image');
     // let revenueMessage = document.querySelector('#revenue');
@@ -68,10 +67,7 @@
 
     // coffeeImage.addEventListener('click', makeCoffee);
 
-    let coffeeImage = $('#coffee-image');
-    let revenueMessage = $('#revenue');
-
-    coffeeImage.attr("src", "static/coffee_beans.jpg");
+    $('#coffee-image').attr("src", "static/coffee_beans.jpg");
 
     const prices = {
         "brew": 2.05,
@@ -104,27 +100,21 @@
         drinksOrdered.push(drinkType);
         console.log(drinksOrdered);
 
-        coffeeImage.attr('src', 'static/coffee_machine.jpg');
+        $('#coffee-image').attr('src', 'static/coffee_machine.jpg');
 
-        setTimeout(()=>coffeeImage.attr('src',
+        setTimeout(()=>$('#coffee-image').attr('src',
             'static/coffee_mug.jpg'), 1500);
 
-        setTimeout(()=>coffeeImage.attr('src',
+        setTimeout(()=>$('#coffee-image').attr('src',
             'static/coffee_beans.jpg'), 4000);
 
         let totalRevenue = revenue();
 
-        revenueMessage.html(totalRevenue)
+        $('#revenue').html(totalRevenue);
     }
 
     $("button").on('click', makeCoffee);
-    coffeeImage.on('click', makeCoffee);
-
-
-
-    // use this JavaScript object in further study step
-
-
+    $('#coffee-image').on('click', makeCoffee);
 
 </script>
 
