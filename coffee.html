@@ -73,7 +73,25 @@
 
     coffeeImage.attr("src", "static/coffee_beans.jpg");
 
+    const prices = {
+        "brew": 2.05,
+        "espresso": 3.25,
+        "latte": 4.15,
+        "hot-chocolate": 2.50
+    };
+
     let drinksOrdered = [];
+
+    function revenue() {
+
+        let totalRevenue = 0;
+
+        for (let drink of drinksOrdered) {
+            totalRevenue += prices[drink];
+        }
+
+        return totalRevenue;
+    }
 
     function makeCoffee(evt) {
         // debugger;
@@ -93,20 +111,19 @@
 
         setTimeout(()=>coffeeImage.attr('src',
             'static/coffee_beans.jpg'), 4000);
+
+        let totalRevenue = revenue();
+
+        revenueMessage.html(totalRevenue)
     }
 
     $("button").on('click', makeCoffee);
     coffeeImage.on('click', makeCoffee);
 
 
+
     // use this JavaScript object in further study step
 
-    const prices = {
-        "brew": 2.05,
-        "espresso": 3.25,
-        "latte": 4.15,
-        "hot chocolate": 2.50
-    };
 
 
 </script>
