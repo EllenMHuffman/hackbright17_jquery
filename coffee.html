@@ -44,12 +44,39 @@
     </div>
 </div>
 
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
 <script>
-
+    "use strict";
     // Set these variables to their DOM elements
 
-    let coffeeImage;
-    let revenueMessage;
+    let coffeeImage = document.querySelector('#coffee-image');
+    let revenueMessage = document.querySelector('#revenue');
+    // let coffeeImage = $('#coffee-image'); JQUERY
+    // let revenueMessage = $('#revenue'); JQUERY
+
+    coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    // coffeeImage.attr("src", "static/coffee_beans.jpg");JQUERY
+
+    function makeCoffee(evt) {
+        console.log(evt);
+
+        coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+
+        // console.log(coffeeImage);
+
+        setTimeout(()=>coffeeImage.setAttribute('src',
+            'static/coffee_mug.jpg'), 1500);
+
+        setTimeout(()=>coffeeImage.setAttribute('src',
+            'static/coffee_beans.jpg'), 2500);
+
+    }
+
+    coffeeImage.addEventListener('click', makeCoffee);
+
+
+
+
 
     // use this JavaScript object in further study step
 
